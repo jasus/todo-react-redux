@@ -1,15 +1,13 @@
 import React from "react";
 import AddTodo from "./containers/AddTodo";
-import TodoList from "./components/TodoList";
+import VisibleTodoList from "./containers/VisibleTodoList";
 import Filters from "./components/Filters";
-
-const onTodoClick = () => {};
 
 const App = () => (
   <div>
     <AddTodo />
     <Filters />
-    <TodoList todos={[]} onTodoClick={onTodoClick()} />
+    <VisibleTodoList />
   </div>
 );
 
