@@ -1,11 +1,15 @@
 import React from "react";
-import Link from "./Link";
+import FilterLink from "../containers/FilterLink";
+import { VisibilityFilters } from "../actions";
 
 const Filters = () => (
   <p>
-    Show: <Link filter="SHOW_ALL">Todos</Link>
-    <Link filter="SHOW_ACTIVE">Activo</Link>
-    <Link filter="SHOW_COMPLETED">Completado</Link>
+    <span>Show:</span>
+    <FilterLink filter={VisibilityFilters.SHOW_ALL}>Todos</FilterLink>
+    <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>Activo</FilterLink>
+    <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
+      Completado
+    </FilterLink>
   </p>
 );
 
