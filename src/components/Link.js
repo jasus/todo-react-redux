@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { Button } from "@material-ui/core";
 
 const Link = ({ active, children, onClick }) => (
@@ -17,9 +18,9 @@ const Link = ({ active, children, onClick }) => (
 );
 
 Link.propTypes = {
-  //active: PropTypes.bool.isRequired,
-  //   children: PropTypes.node.isRequired,
-  //   onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Link;
