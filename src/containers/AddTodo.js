@@ -2,8 +2,6 @@ import React from "react";
 import { TextField, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import "./AddTodo.css";
-//import { connect } from "react-redux";
-//import { addTodo } from "../actions";
 
 let AddTodo = () => {
   let input;
@@ -14,9 +12,7 @@ let AddTodo = () => {
         <TextField
           id="standard-basic"
           label="Añadir tarea"
-          ref={(node) => {
-            input = node;
-          }}
+          inputRef={(node) => (input = node)}
         />
         <Fab
           style={{ marginLeft: "20px" }}
@@ -31,7 +27,5 @@ let AddTodo = () => {
     </div>
   );
 };
-
-//AddTodo = connect()(AddTodo);
 
 export default AddTodo;
