@@ -1,5 +1,5 @@
 import React from "react";
-import AddTodo from "./containers/AddTodo";
+import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Filters from "./components/Filters";
 
