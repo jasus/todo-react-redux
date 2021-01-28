@@ -1,5 +1,6 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Button } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
