@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { TextField, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
@@ -7,8 +7,10 @@ import AddIcon from "@material-ui/icons/Add";
 import "./AddTodo.css";
 import { addTodo } from "../actions";
 
-let AddTodo = ({ dispatch }) => {
+export const AddTodo = () => {
   let input;
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -41,5 +43,3 @@ let AddTodo = ({ dispatch }) => {
     </div>
   );
 };
-
-export default connect()(AddTodo);

@@ -1,21 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
-const Todo = ({ onClick, completed, text }) => (
-  <li
-    onClick={onClick}
-    style={{
-      textDecoration: completed ? "line-through" : "none",
-    }}
-  >
-    {text}
-  </li>
-);
+import { toggleTodo } from "../actions";
 
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
+export const Todo = ({ completed, text, id }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <li
+      onClick={(e) => {
+        e.preventDefault();
+        dispatch(toggleTodo(id));
+      }}
+      style={{
+        textDecoration: completed ? "line-through" : "none",
+      }}
+    >
+      {text}
+    </li>
+  );
 };
 
-export default Todo;
+Todo.propTypes = {
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
